@@ -69,7 +69,7 @@ Rather than giving you specific instructions, interpret these requests from the 
 Functions have not been pre-written for these, and it's up to you how you want to tackle them.
 
 ## General Tips
-
+h
 You can always write and test your SQL in a sql file first to check that it finds the data you expect.
 
 It's a good idea to start by constructing the joins before you worry about what data you want to get out of the table - when you have the columns you need, then move on to picking out the columns and any processing to be done on them.

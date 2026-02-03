@@ -114,7 +114,7 @@ def review_student_numbers(db):
     '''
     Print the number of students registered for each course.    
     :param db: Database object to query
-    '''
+    ''' 
     pass
 
 def main():
