@@ -7,7 +7,7 @@ Please note that your code will be tested with different data (in the same datab
 2. Screening sales (screening_sales)
 3. Top customers by spend (top_customers_by_spend)
 0. Exit
-Select an option: 1
+Select an option: 1 
 Enter customer_id: 2
 --------------------+----------+------
 Film Title          | Screen   | Price

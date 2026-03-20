@@ -2,7 +2,7 @@
 You are working with a small database used by a cinema booking system.
 
 The database contains the following tables:
-
+ 
 customers(**customer_id**, customer_name)
 films(**film_id**, title, age_rating)
 screenings(**screening_id**, film_id, screen)
