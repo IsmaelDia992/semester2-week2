@@ -38,53 +38,32 @@ def customer_tickets(conn, customer_id):
 
 
 def screening_sales(conn):
-    """
-    Returns screening_id, film title, and tickets sold count.
-    Ordered by tickets sold descending.
-    """
     cursor = conn.cursor()
-
-
     query = """
-        SELECT 
-            s.screening_id, 
-            f.title, 
-            COUNT(t.ticket_id) AS tickets_sold
+        SELECT s.screening_id, f.title, COUNT(t.ticket_id) AS tickets_sold
         FROM screenings s
         JOIN films f ON s.film_id = f.film_id
         LEFT JOIN tickets t ON s.screening_id = t.screening_id
         GROUP BY s.screening_id, f.title
         ORDER BY tickets_sold DESC
     """
-
     cursor.execute(query)
     results = cursor.fetchall()
     cursor.close()
-    
     return results
 
 
 def top_customers_by_spend(conn, limit):
-    """
-    Returns customer names and their total spending on tickets.
-    Ordered by total spent descending, restricted by 'limit'.
-    """
     cursor = conn.cursor()
-
-
     query = """
-        SELECT 
-            c.customer_name, 
-            SUM(t.price) AS total_spent
+        SELECT c.customer_name, SUM(t.price) AS total_spent
         FROM customers c
         JOIN tickets t ON c.customer_id = t.customer_id
         GROUP BY c.customer_id, c.customer_name
         ORDER BY total_spent DESC
         LIMIT ?
     """
-
     cursor.execute(query, (limit,))
     results = cursor.fetchall()
     cursor.close()
-    
     return results
